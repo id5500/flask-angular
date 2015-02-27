@@ -1,10 +1,12 @@
 import os
+import urllib
 import jinja2
 
-from flask import Flask, render_template
+from flask import Flask, render_template,request
 from google.appengine.ext import ndb
 
 app = Flask(__name__)
+app.debug=True
 
 JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__))
@@ -24,5 +26,14 @@ def index():
     val = {
         'msg': 'Hello, Flask/Jinja2'
     }
+    print "get"
+    return render_template('index.html', val=val)
 
+@app.route('/add',methods=['POST'])
+def add():
+    myVal = request.args.get('q','')
+    val ={
+        'msg':'posted!!!!'
+    }
+    print urllib.unquote((myVal).encode('utf-8'))
     return render_template('index.html', val=val)

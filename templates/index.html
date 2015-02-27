@@ -15,8 +15,36 @@
     <hr/>
     <p>{{ val.msg }}</p>
     <hr/>
-    <button ng-click="action()">push</button>
-</div>
+    デモ1<br/>
+    選択
+    <button ng-click="updateModel('GET', '/')">/ GET</button>
+    <button ng-click="updateModel('GET', 'hello.txt')">Local file GET</button>
+    <button ng-click="updateModel('JSONP', 'http://angularjs.org/greet.php?callback=JSON_CALLBACK&name=Super%20Hero')">
+        JSONP request
+    </button>
 
+    <select ng-model="method">
+        <option>GET</option>
+        <option>JSONP</option>
+    </select>
+    <input type="text" ng-model="url" size="80"/>
+    <br/>
+    <input type="submit" ng-click="fetch()" value="取得"/>
+
+    <hr/>
+    デモ2<br/>
+
+    <form>
+        <input type="text" ng-model="userText" name="userText"/>
+        <input ng-click="posting()" value="/add に 入力したテキストをポスト" type="submit"/>
+    </form>
+    <hr/>
+
+    <pre>http status code: [[ status ]]</pre>
+    <pre>http response data: [[ data ]]</pre>
+</div>
+<div>
+
+</div>
 </body>
 </html>

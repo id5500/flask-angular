@@ -6,7 +6,7 @@ var MyController = function ($scope, $http, $templateCache) {
     $scope.method = 'GET';
     $scope.url = 'hello.txt';
 
-    $scope.message = 'Hello, Angular';
+    $scope.message = 'Flask と Angular で非同期通信';
 
     $scope.fetch = function()
     {

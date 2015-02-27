@@ -10,12 +10,10 @@
 <body>
 <div ng-controller="myController">
     <div>
-        [[ message ]]
+        <h1>[[ message ]]</h1>
     </div>
     <hr/>
-    <p>{{ val.msg }}</p>
-    <hr/>
-    デモ1<br/>
+    <h3>デモ1</h3><br/>
     選択
     <button ng-click="updateModel('GET', '/')">/ GET</button>
     <button ng-click="updateModel('GET', 'hello.txt')">Local file GET</button>
@@ -29,19 +27,20 @@
     </select>
     <input type="text" ng-model="url" size="80"/>
     <br/>
-    <input type="submit" ng-click="fetch()" value="取得"/>
+    取得
+    <input type="submit" ng-click="fetch()" value="ポチッ"/>
 
     <hr/>
-    デモ2<br/>
+    <h3>デモ2</h3><br/>
 
     <form>
         <input type="text" ng-model="userText" name="userText"/>
-        <input ng-click="posting()" value="/add に 入力したテキストをポスト" type="submit"/>
+        <input ng-click="posting()" value="入力したテキストを /add に ポスト" type="submit"/>
     </form>
     <hr/>
 
-    <pre>http status code: [[ status ]]</pre>
-    <pre>http response data: [[ data ]]</pre>
+    <pre>status code: [[ status ]]</pre>
+    <pre>response data: [[ data ]]</pre>
 </div>
 <div>
 
